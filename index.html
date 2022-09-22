@@ -1,0 +1,444 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/solarized.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+		<style type="text/css">
+			p {
+				font-family: Avenir, serif;
+				font-size: 20px,;
+				top: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background-color="#093028">
+					<p style="font-family: Avenir,serif; font-size: 35px;" class="text-color-white">Excalibur: efficiënt en interactief zoeken in grote hoeveelheden afbeeldingen </p>
+					<p style="font-family: Avenir,serif; font-size: 30px; margin-top: 50px;">Digitober</p>
+					<p style="font-family: Avenir,serif; font-size: 20px;">Mark Berger, Ronald van Velzen, Robin Bakker, Niels Dekker</p>
+					<p style="font-family: Avenir,serif; font-size: 20px;">12-09-2022</p>
+					<aside class="notes">
+						Welkom iedereen bij de Digitober presentatie over Excalibur! Mijn naam is Mark Berger, en dit is mijn collega Ronald van Velzen.
+						Vandaag willen we jullie meenemen in de wondere wereld van zoeksystemen, met name zoeken in afbeeldingen. Wat gaan we vandaag doen?
+					</aside>
+				</section>
+				<section data-background-color="#093028">
+					<p style="font-family: Avenir, serif; font-size: 55px;" class="text-color-white">Agenda van de dag</p>
+					<ul>
+						<li style="font-size: 25px; font-family: Avenir, serif;" class="text-color-2">
+							Introductie sprekers & CoDE 👨‍💻
+						</li>
+						<li style="font-size: 25px; font-family: Avenir, serif;" class="text-color-2">
+							Waarom zoeken in afbeeldingen? 🔍
+						</li>
+						<li style="font-size: 25px; font-family: Avenir, serif;" class="text-color-2">
+							Excalibur 🗡️
+							<ul>
+								<li style="font-size: 20px; font-family: Avenir, serif;" class="text-color-2">
+									User interface 🖥️
+								</li>
+								<li style="font-size: 20px; font-family: Avenir, serif;" class="text-color-2">
+									Wat zit er onder de kap bij Excalibur? 🤓
+								</li>
+								<li style="font-size: 20px; font-family: Avenir, serif;" class="text-color-2">
+									Demo! 🤩
+								</li>
+							</ul>
+						</li>
+						<li style="font-size: 25px; font-family: Avenir, serif;" class="text-color-2">
+							Volgende stappen 🦿
+						</li>
+						<li style="font-size: 25px; font-family: Avenir, serif;" class="text-color-2">
+							Tijd voor vragen ❓
+						</li>
+						<li style="font-size: 25px; font-family: Avenir, serif;" class="text-color-2">
+							Zelf aan de gang met Excalibur! 👩‍🔬
+						</li>
+					</ul>
+				</section>
+				<section data-background-color="#093028">
+					<section data-background-color="#093028">
+						<h4 style="position: relative; font-family: Avenir, serif; color: whitesmoke">Wie zijn wij?</h4>
+					</section>
+					<!-- Mark -->
+					<section data-background-color="#093028">
+						<p style="font-family: Avenir, serif; color: whitesmoke">Mark Berger</p>
+						<div>
+							<img style="width: 300px; clip-path: circle(); float: left; position: relative; right: 90px" src="assets/mark.jpg"/>
+							<ul style="bottom: 380px; left: 100px; float: right; position: relative;">
+								<li style="font-size: 25px; font-family: Avenir, serif; margin: 10px;" class="text-color-2">
+									Bachelor Kunstmatige Intelligentie @ Universiteit Utrecht
+								</li>
+								<li style="font-size: 25px; font-family: Avenir, serif; margin: 10px" class="text-color-2">
+									Master Information Systems @ Universiteit van Amsterdam
+								</li>
+								<li style="font-size: 25px; font-family: Avenir, serif; margin: 10px" class="text-color-2">
+									Sinds 2018 bij de FIOD als Data Scientist / ML engineer
+								</li>
+								<li style="font-size: 25px; font-family: Avenir, serif; margin: 10px" class="text-color-2">
+									Eerst project DGO, en nu CoDE
+								</li>
+								<li style="font-size: 25px; font-family: Avenir, serif; margin: 10px" class="text-color-2">
+									Geinteresseerd in slim zoeken, generatieve AI, en interactieve systemen
+								</li>
+								<!-- TODO: misschien wat leuke gegenereerde afbeeldingen hier ;) -->
+							</ul>
+						</div>
+						<aside class="notes">
+							Ik ben Mark, ik werk al sinds 2018 bij de FIOD, als een van de eerste developers van het DGO platform, wat nu uitgegroeid
+							is naar CoDE.
+						</aside>
+					</section>
+					<!-- Ronald -->
+					<section data-background-color="#093028">
+						<p style="font-family: Avenir, serif;" class="text-color-white">Ronald van Velzen</p>
+						<aside class="notes">
+							Ik ben Ronald...
+						</aside>
+					</section>
+					<!-- CoDE -->
+					<section data-background-color="#c9d4d6">
+						<!-- <p style="font-family: Avenir, serif; font-size: 50px;" class="text-color-white">CoDE</p> -->
+						<img src="assets/CoDE logo.svg" style="width: 30%;"/>
+						<blockquote style="font-family: Avenir, serif; font-size: 35px; text-align: left; color: black; border-color: black; padding-left: 20px;">
+							CoDE staat voor <p style="display: inline" class="fragment highlight-blue" data-fragment-index="1">C</p>enter <p style="display: inline" class="fragment highlight-blue" data-fragment-index="1">o</p>f <p
+							style="display: inline" class="fragment highlight-blue" data-fragment-index="1">D</p>ata <p
+							style="display: inline" class="fragment highlight-blue" data-fragment-index="1">E</p>xpertise.
+							We ontwikkelen applicaties die het werk van de rechercheur <p style="display: inline" class="fragment highlight-blue" data-fragment-index="2">makkelijker</p> moeten maken. 
+							<br><br>
+							Onze doelstellingen zijn daarbij: gebruik <p style="display: inline" class="fragment highlight-blue" data-fragment-index="3">nieuwe algoritmes en technologieen</p> 
+							om <p style="display: inline" class="fragment highlight-blue" data-fragment-index="4">data te reduceren</p>, <p style="display: inline" class="fragment highlight-blue" data-fragment-index="4">te verrijken</p>, en om te zetten naar een <p style="display: inline" class="fragment highlight-blue" data-fragment-index="4">handig formaat</p>.
+						</blockquote>
+						<!-- <p style="font-family: Avenir, serif;" class="text-color-white">Center of Data Expertise</p> -->
+						<aside class="notes">
+							CoDE staat voor Center of Data Expertise. We ontwikkelen applicaties die het werk van de 
+							rechercheur moet vergemakkelijken. Onze doelstellingen zijn daarbij: gebruik nieuwe algoritmes en technologieen
+							om data te reduceren, te verrijken en om te zetten naar een handig formaat.
+						</aside>
+					</section>
+				</section>
+				<section data-background-color="#093028">
+					<section data-background-color="#093028">
+						<h4 style="position: relative; font-family: Avenir, serif; color: whitesmoke;">Zoeken in afbeeldingen</h4>
+						<aside class="notes">
+							Nu dat jullie weten wie we zijn willen we graag aftrappen met de vraag: Waarom willen we eigenlijk zoeken in afbeeldingen?
+						</aside>
+					</section>
+					<section data-background-color="#093028" data-auto-animate>
+						<p style="font-family: Avenir, serif;" class="text-color-white">Ongestructureerde data domineert</p>
+						<div>
+							<img src="assets/iphone-14-pro-concept-pil.png" style="width: 50%; float: left;"/>
+							<img src="assets/car.jpeg" style="width: 7%;
+							position: relative;
+							right: 405px;
+							top: 100px;"/>
+							<img src="assets/chat_app.jpeg" style="width: 4%;
+							position: relative;
+							right: 500px;
+							top: 120px;"/>
+							<img src="assets/audio.jpeg" style="width: 7%;
+							position: relative;
+							right: 550px;
+							top: 50px;"/>
+						</div>
+						<aside class="notes">
+							phone
+						</aside>
+					</section>
+					<section data-background-color="#093028" data-auto-animate>
+						<p style="font-family: Avenir, serif;" class="text-color-white">Ongestructureerde data domineert</p>
+						<div>
+							<img src="assets/iphone-14-pro-concept-pil.png" style="width: 50%; float: left; position: relative; top: 50px;"/>
+							<!-- <p style="float: left;
+							padding: 30px;" class="text-color-2">Images</p> -->
+							<!-- <img src="assets/Arrow_east.png" style="position: absolute;
+							width: 20%;
+							right: 50%;
+							bottom: 60%;
+							transform: rotate(-30deg);" class="fragment fade-in" data-fragment-index="1"/> -->
+							<img src="assets/car.jpeg" style="width: 25%; display: block;"/>
+							<!-- <img src="assets/Arrow_east.png" style="position: absolute;
+							width: 20%;
+							right: 50%;
+							bottom: 42%;
+							transform: rotate(25deg);" class="fragment fade-in" data-fragment-index="1"/> -->
+							<!-- <p style="float: left;
+							padding: 30px;" class="text-color-2">Text</p> -->
+							<img src="assets/chat_app.jpeg" style="width: 10%; display: block;"/>
+							<!-- <img src="assets/Arrow_east.png" style="position: absolute;
+							width: 20%;
+							right: 52%;
+							bottom: 32%;
+							transform: rotate(45deg);" class="fragment fade-in" data-fragment-index="1"/> -->
+							<img src="assets/audio.jpeg" style="width: 25%; position: relative; left: 12.5%; bottom: 20px;"/>
+						</div>
+						<aside class="notes">
+							Plaatjes, text in de vorm van chat berichten en textuele documenten, en ook audio (en video).
+							VRAAG AAN PUBLIEK: Hoeveel plaatjes staan er normaal gesproken op een inbeslaggenomen apparaat?
+						</aside>
+					</section>
+					<section data-background-color="#093028">
+						<!-- <h4 style="position: relative; font-family: Avenir, serif; color: whitesmoke;">Mobiele telefoons</h4> -->
+						<h4 class="r-fit-text" style="color: rgb(181, 234, 230);">1.72 triljoen per jaar</h4>
+						<h4 class="r-fit-text fragment fade-in" style="color: rgb(181, 234, 230);">4.7 miljard per dag</h4>
+						<h4 class="r-fit-text fragment fade-in" style="color: rgb(181, 234, 230);">6.9 miljard verstuurd per dag</h4>
+						<aside class="notes">
+							Er worden 1.7 triljoen foto's per jaar genomen in de laatste jaren, ofwel 4.7 miljard per dag.
+							Gemiddeld worden er bijna 7 miljard afbeeldingen per dag verstuurd over WhatsApp alleen. 
+						</aside>
+					</section>
+					<section data-background-color="#093028">
+						<p style="font-family: Avenir, serif;" class="text-color-white">Opslag</p>
+						<p style="display: inline; font-size: 25px;" class="text-color-2">Een gemiddeld telefoon kan anno 2022 rond de</p> <p style="display: inline; font-size: 25px;" class="fragment highlight-green text-color-2" data-fragment-index="1">35.500 foto's</p> 
+						<p style="display: inline; font-size: 25px;" class="text-color-2">opslaan.</p>
+					<p style="display: inline; font-size: 25px;" class="text-color-2">Volgens een onderzoek, hebben mensen in 2022 gemiddeld</p> <p style="display: inline; font-size: 25px;" class="fragment highlight-green text-color-2" data-fragment-index="1">2.400 foto's</p> 
+					<p style="display: inline; font-size: 25px;" class="text-color-2">op hun iPhone staan.<sup>*</sup></p> 
+					<br><br>
+					<div class="fragment fade-in" data-fragment-index="1">
+						<p style="display: inline; font-size: 25px;" class="text-color-2">Echter zijn deze getallen misleidend: de forensische images van de telefoons die wij afnemen hebben veel meer afbeeldingen.
+						Dit komt door allerlei systeem afbeeldingen en icoontjes die op zo'n device kunnen schuilen. Ervaring vertelt dat we het makkelijk over</p> 
+						<p style="display: inline; font-size: 25px;" class="fragment highlight-green text-color-2" data-fragment-index="2">50.000+ afbeeldingen</p>
+						<p style="display: inline; font-size: 25px;"> <p style="display: inline; font-size: 25px;" class="text-color-2"> per device kunnen praten...</p>
+						<img src="assets/icons.jpeg" style="width: 30%; float: right">
+					</div>
+					<p style="font-size: 15px; float: left; position: relative; top: 70px;"><sup>*</sup> https://photutorial.com/photos-statistics/</p>
+						<aside class="notes">
+							Een gemiddeld telefoon kan anno 2022 rond de 35.500 foto's opslaan. Volgens een onderzoek, hebben mensen in 2022 gemiddeld 2.400 foto's op hun iPhone staan.
+							Echter zijn deze getallen misleidend: de forensische images van de telefoons die wij afnemen hebben veel meer afbeeldingen. 
+							Dit komt door allerlei systeem afbeeldingen en icoontjes die op zo'n device kunnen schuilen. 
+							Ervaring vertelt dat we het makkelijk over 50.000+ afbeeldingen per device kunnen praten...
+						</aside>
+					</section>
+					<section data-background-color="#093028">
+						<blockquote style="font-family: Avenir, serif; font-size: 35px; text-align: left; color: whitesmoke; border-color: black; padding-left: 20px;">
+							<p style="display: inline" class="fragment highlight-green" data-fragment-index="1">Data reductie</p> is essentieel. 
+							Wij willen een systeem hebben die <p style="display: inline" class="fragment highlight-red" data-fragment-index="2">100.000</p> te bekijken afbeeldingen reduceert tot
+							<p style="display: inline" class="fragment highlight-green" data-fragment-index="3">100</p> te bekijken afbeeldingen.
+							<br><br>
+							<p style="display: inline" class="fragment highlight-green" data-fragment-index="4">Zo komt een rechercheur of analyst snel toe aan de data die er toe doet.</p>
+						</blockquote>
+						<aside class="notes">
+							Data reductie is essentieel. Wij willen een systeem hebben die 100.000 te bekijken afbeeldingen reduceert tot 100 te bekijken afbeeldingen.
+							Zo komt een rechercheur of analyst snel toe aan de data die er toe doet.
+						</aside>
+					</section>
+				</section>
+				<section data-background-color="#093028">
+					<section>
+						<h2 style="color: whitesmoke;">Excalibur</h2>
+						<aside class="notes">
+							Nu dat de noodzaak om het aantal afbeeldingen te reduceren duidelijk is, hoe krijgen we dit voor elkaar?
+							Dat is precies waar Excalibur van pas komt.
+						</aside>
+					</section>
+					<section>
+						<p style="color: whitesmoke;">Excalibur is een zoeksysteem</p>
+						<iframe data-src="https://en.wikipedia.org/wiki/Search_engine" style="width: 100%; height: 530px;"></iframe>
+						<aside class="notes">
+							Excalibur is een speciaal soort systeem. Namelijk een zoeksysteem. Laten we beginnen met de definitie van een zoeksysteem op Wikipedia.
+							Een zoeksysteem is een software systeem wat gemaakt is om het World Wide Web te doorzoeken. Velen zullen bij een zoeksysteem aan Google denken, 
+							maar het is maar 1 voorbeeld van een zoeksysteem. Systemen verschillen in omvang van de doorzoekbare data, het zoekmodaliteit (text, plaatjes, audio),
+							toegang (openbaar en prive), en domein. 
+							
+							Hier rechts zien we voorbeelden van zoeksystemen. 
+							Dit zijn voornamelijk systemen die werken zoals meesten van jullie waarschijnlijk gewend zijn, namelijk vergelijkbaar met Google.
+							Je typt wat in, en je krijgt een reeks websites die relevant zijn. Maar de resultaten kunnen ook anders zijn.
+						</aside>
+					</section>
+					<section>
+						<p style="color: whitesmoke;">WolframAlpha</p>
+						<iframe data-src="https://www.wolframalpha.com/" style="width: 100%; height: 530px;"></iframe>
+						<aside class="notes">
+							Zoals bijvoorbeeld Wolfram Alpha. Dit is een speciaal zoeksysteem wat voor academia is ontwikkeld, maar ook gebruikt kan worden
+							voor het zoeken van informatie over verschillende sociaal-wetenschappelijke themas.
+							Zoals je hier kan zien zijn er veel topics waarbinnen je kan zoeken. Laten we zeggen dat we geinteresseerd zijn in de Franse revolutie.
+							Het systeem begrijpt mijn aanvraag, en geeft gestructureerde informatie terug over het event. Dit soort resultaten zijn ook wel een voorbeeld 
+							van iets wat semantic web heet, maar daar ga ik nu niet verder op in.
+						</aside>
+					</section>
+					<section>
+						<p style="color: whitesmoke;">Text doorzoeken</p>
+						<p style="font-size: 25px; float: left; padding: 7px;" class="text-color-2 r-frame"> 🔍 Geparkeerde blauwe auto</p>
+						<table class="tg fragment fade-in" data-fragment-index="1" style="width: 600px; font-size: 20px; color: whitesmoke; display: block;
+						position: relative;
+						right: 39%; top: 100px;">
+							<thead>
+							  <tr>
+								<th class="tg-1wig">Zoekresultaat</th>
+								<th class="tg-1wig">Overeenkomst</th>
+							  </tr>
+							</thead>
+							<tbody>
+							  <tr>
+								<td class="tg-0lax">"Blauwe auto"</td>
+								<td class="tg-0lax">93%</td>
+							  </tr>
+							  <tr>
+								<td class="tg-0lax">"Geparkeerde auto"</td>
+								<td class="tg-0lax">90%</td>
+							  </tr>
+							  <tr>
+								<td class="tg-0lax">"Auto in de straat"</td>
+								<td class="tg-0lax">79%</td>
+							  </tr>
+							  <tr>
+								<td class="tg-0lax">"Parkeergarage met auto's"</td>
+								<td class="tg-0lax">79%</td>
+							  </tr>
+							</tbody>
+						</table>
+						<img src="assets/rightside.png" style="width: 55%; -webkit-filter: invert(100%);
+						filter: invert(100%); position: relative; bottom: 170px; left: 20%;" class="fragment fade-in" data-fragment-index="2">
+						<p style="color: whitesmoke; position: absolute;
+						font-size: 25px;
+						top: 450px;
+						left: 590px;" class="fragment fade-in" data-fragment-index="3">"bag-of-words"</p>
+						<p style="color: whitesmoke; position: absolute;
+						font-size: 25px;
+						top: 450px;
+						left: 850px;" class="fragment fade-in" data-fragment-index="4">"vector"</p>
+						<img src="assets/arrow_rightside.png" style="width: 68%; -webkit-filter: invert(100%);
+						filter: invert(100%); position: relative; bottom: 265px; left: 10%;" class="fragment fade-in" data-fragment-index="5">
+						<aside class="notes">
+							Een vrij simpele techniek voor het doorzoeken van tekst werkt als volgt: we transformeren onze data op basis van "bag-of-words" --> alle zinnen worden verzamelingen aan woorden, zonder structuur. 
+							Vervolgens kunnen we de voorkomens van elk woord uit onze input zin tellen in alle andere zinnen. Deze voorkomens vormen samen een numerieke representatie van een zin, de zogenaamde vector.
+							Fijne aan deze vectoren is dat er mee gerekend kan worden! Zo kunnen we bijvoorbeeld afstanden tussen de vectoren berekenen, en op basis daarvan de overeenkomsten. Voor een computer is menselijk taal
+							begrijpen een hele lastige taak, maar door taal om te zetten naar getallen, kan de computer er wat mee!
+						</aside>
+					</section>
+					<section data-background-color="#d6c9d9">
+						<p style="color: black;">Text doorzoeken: advanced</p>
+						<p style="color: black; font-size: 30px; padding-top: 70px; ">"Deze blauwe auto staat geparkeerd"</p>
+						<!-- <img src="assets/nn.png" style="width: 70%;"> -->
+						<!-- <p style="color: black; font-size: 20px;
+						position: absolute;
+						top: 215px;">Geparkeerde</p>
+						<p style="color: black; font-size: 20px;">blauwe</p>
+						<p style="color: black; font-size: 20px;">auto</p>
+						<p style="color: black; font-size: 20px;">staat</p>
+						<p style="color: black; font-size: 20px;">daar</p> -->
+						<!-- <iframe style="width: 100%; max-width: 100% !important; height: 530px;"src="https://playground.tensorflow.org/#activation=relu&regularization=L2&batchSize=10&dataset=gauss&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=10&networkShape=4&seed=0.81866&showTestData=false&discretize=false&percTrainData=80&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false"></iframe> -->
+						<aside class="notes">
+							Echter, deze bag-of-words manier van representaties maken is vaak te simpel om complexe betekenis van tekst vast te leggen. Een veel krachtigere manier om text representaties te creeren is door gebruik
+							te maken van neurale netwerken. Dit zijn speciale machine learning modellen die complexe patronen en eigenschappen kunnen leren van de input data. De output van zo'n model kan een classificatie zijn, 
+							maar ook een vector zoals die getoond is op de vorige slide. Alleen zijn de vectoren die een neuraal netwerk produceert een heel stuk groter: je kan denken aan vectoren van bijvoorbeeld 512 getallen lang.
+						</aside>
+					</section>
+					<section data-background-color="#d6c9d9">
+						<p style="color: black;">Neuraal netwerk</p>
+						<!-- <p style="color: black; font-size: 25px;">Geparkeerde blauwe auto staat daar</p> -->
+						<img src="assets/nn.png" style="width: 70%;">
+						<p style="color: black; font-size: 20px;
+						position: absolute;
+						top: 215px; left: 10%;">Deze ➜</p>
+						<p style="color: black; font-size: 20px;
+						position: absolute;
+						top: 285px; left: 8%;">blauwe ➜</p>
+						<p style="color: black; font-size: 20px;
+						position: absolute;
+						top: 355px; left: 10.4%;">auto ➜</p>
+						<p style="color: black; font-size: 20px;
+						position: absolute;
+						top: 425px; left: 10%;">staat ➜</p>
+						<p style="color: black; font-size: 20px;
+						position: absolute;
+						top: 495px; left: 3.6%;">geparkeerd ➜</p>
+						<p style="color: black; font-size: 20px;
+						position: absolute;
+						left: 34.2%;
+    					top: 35.2%;" class="fragment fade-in" data-fragment-index="1">0.78</p>
+						<p style="color: black; font-size: 20px;
+						position: absolute;
+						left: 34.2%;
+    					top: 46.6%;" class="fragment fade-in" data-fragment-index="2">0.06</p>
+						<p style="color: black; font-size: 20px;
+						position: absolute;
+						left: 33.8%;
+    					top: 58.1%;" class="fragment fade-in" data-fragment-index="3">-0.98</p>
+						<p style="color: black; font-size: 20px;
+						position: absolute;
+						left: 34.2%;
+    					top: 69.5%;" class="fragment fade-in" data-fragment-index="3">0.46</p>
+						<p style="color: black; font-size: 20px;
+						position: absolute;
+						left: 34.2%;
+    					top: 80.6%;" class="fragment fade-in" data-fragment-index="3">0.12</p>
+						<p style="color: black; font-size: 20px;
+						position: absolute;
+						left: 34.2%;
+    					top: 46.6%;" class="fragment fade-in" data-fragment-index="3">-0.04</p>
+						<p style="color: black; font-size: 20px;
+						position: absolute;
+						left: 34.2%;
+    					top: 46.6%;" class="fragment fade-in" data-fragment-index="3">0.45</p>
+						<p style="color: black; font-size: 20px;
+						position: absolute;
+						left: 34.2%;
+    					top: 46.6%;" class="fragment fade-in" data-fragment-index="3">0.57</p>
+						<p style="color: black; font-size: 20px;
+						position: absolute;
+						left: 34.2%;
+    					top: 46.6%;" class="fragment fade-in" data-fragment-index="3">-0.13</p>
+						<p style="color: black; font-size: 20px;
+						position: absolute;
+						left: 34.2%;
+    					top: 46.6%;" class="fragment fade-in" data-fragment-index="3">0.42</p>
+						<p style="color: black; font-size: 20px;
+						position: absolute;
+						left: 34.2%;
+    					top: 46.6%;" class="fragment fade-in" data-fragment-index="3">0.86</p>
+						<p style="color: black; font-size: 25px;
+						position: absolute;
+						left: 77.7%;
+						top: 46.2%;" class="fragment fade-in">🚙</p>
+						<p style="color: black; font-size: 25px;
+						position: absolute;
+						left: 77.7%;
+						top: 57.2%;" class="fragment fade-in">🚗</p>
+						<p style="color: black; font-size: 25px;
+						position: absolute;
+						left: 77.7%;
+						top: 68.2%;" class="fragment fade-in">🏎️</p>
+						<p style="color: black; font-size: 25px;
+						position: absolute;
+						left: 83.7%;
+						top: 46.2%;" class="fragment fade-in">✅</p>
+						<!-- <iframe style="width: 100%; max-width: 100% !important; height: 530px;"src="https://playground.tensorflow.org/#activation=relu&regularization=L2&batchSize=10&dataset=gauss&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=10&networkShape=4&seed=0.81866&showTestData=false&discretize=false&percTrainData=80&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false"></iframe> -->
+						<aside class="notes">
+							De zin "Deze blauwe auto staat geparkeerd" halen we woord voor woord door ons neuraal netwerk algoritme. 
+							Dat zien we hier links. Elk woord gaat er los in. Vervolgens worden er heel veel wiskundige operaties uitgevoerd
+							in deze drie lagen, waardoor er 
+						</aside>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
