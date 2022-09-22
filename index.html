@@ -434,7 +434,23 @@
 						<aside class="notes">
 							De zin "Deze blauwe auto staat geparkeerd" halen we woord voor woord door ons neuraal netwerk algoritme. 
 							Dat zien we hier links. Elk woord gaat er los in. Vervolgens worden er heel veel wiskundige operaties uitgevoerd
-							in deze drie lagen, waardoor er 
+							in deze drie lagen, waarbij elk rondje hier voor een zogenaamd neuroon staat, wat steeds in waarde veranderd
+							gedurende het trainingsproces. Aan het eind van het model trainingsproces heeft elk neuroon een waarde gekregen.
+							Vervolgens kunnen we de waardes op zo'n manier aggregeren dat we een voorspelling kunnen doen over in wat voor onderwerp
+							dit specifiek zinnetje valt. In ons geval willen we dat het neuraal netwerk het onderwerp "blauwe auto's" voorspelt.
+						</aside>
+					</section>
+					<section data-background-color="rgb(247, 247, 247)">
+						<p style="color: black;">Neuraal netwerk in actie</p>
+						<iframe style="position: relative; right:140px; width: 1200px; max-width: 1200px; height: 530px;"src="https://playground.tensorflow.org/#activation=relu&regularization=L2&batchSize=10&dataset=gauss&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=10&networkShape=4&seed=0.81866&showTestData=false&discretize=false&percTrainData=80&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false"></iframe>
+						<aside class="notes">
+							We gaan nog een stukje verder, met een live demonstratie hoe een neuraal netwerk werkt. Laten we het netwerk
+							van de vorige slide hier nabouwen. Alleen gaan we uit dat we maar twee onderwerpen kunnen voorspellen, in plaats van drie.
+							We zien hier links FEATURES staan. Features zijn de eigenschappen die elk iets vertellen over de data. In ons geval 
+							vertelt elk woord uit onze zin iets over onze zin, dus is elk woord ook een feature. We hadden 5 woorden in onze zin,
+							dus we kiezen hier ook vijf features. In ons voorbeeld van net hadden we drie neuroon lagen met steeds 5 neuron per laag. 
+							Laten we het hier ook doen.
+
 						</aside>
 					</section>
 				</section>
