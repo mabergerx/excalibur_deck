@@ -449,8 +449,17 @@
 							We zien hier links FEATURES staan. Features zijn de eigenschappen die elk iets vertellen over de data. In ons geval 
 							vertelt elk woord uit onze zin iets over onze zin, dus is elk woord ook een feature. We hadden 5 woorden in onze zin,
 							dus we kiezen hier ook vijf features. In ons voorbeeld van net hadden we drie neuroon lagen met steeds 5 neuron per laag. 
-							Laten we het hier ook doen.
+							Laten we het hier ook doen. Ik laat de resterende parametrisatie nu voor wat het is. 
+							
+							De achtergrond kleuren hier rechts geven de klasse attributie aan voor de punten. 
+							Je ziet aan begin dat alles een beetje random kleur heeft: dat komt omdat het model nu nog niet weet welke punten bij elkaar horen
+							en wat de klasse attributie is. Je ziet ook elke keer dat als ik de initiele distributie refresh, dat de loss hier rechtsboven veranderd.
+							Loss geeft eigenlijk aan hoe ver de voorspellingen van het model af staan van de echte categorieen.
 
+							Als we nu op Play drukken hier dan begint het algoritme te trainen. 
+							Je ziet dat het model al snel de scheiding leert te maken tussen twee klasses en de loss snel afneemt.
+							Dit is natuurlijk een versimplificatie van de werkelijkheid want in praktijk hebben we te maken met stuk meer features, 
+							en vooral, veel meer output classes. 
 						</aside>
 					</section>
 				</section>
