@@ -15,8 +15,6 @@
 		<style type="text/css">
 			p {
 				font-family: Avenir, serif;
-				font-size: 20px,;
-				top: 100px;
 			}
 		</style>
 	</head>
@@ -46,7 +44,7 @@
 							Excalibur 🗡️
 							<ul>
 								<li style="font-size: 20px; font-family: Avenir, serif;" class="text-color-2">
-									User interface 🖥️
+									Hoe werkt zoeken eigenlijk? 🧐
 								</li>
 								<li style="font-size: 20px; font-family: Avenir, serif;" class="text-color-2">
 									Wat zit er onder de kap bij Excalibur? 🤓
@@ -545,13 +543,70 @@
 							genaamd Google Lens.
 						</aside>
 					</section>
-					<section data-background-color="#d6c9d9">
+					<section data-background-color="#1e81b0">
 						<p style="color: black;">En nu wil ik het zien werken!</p>
-						<img src="assets/reverse_search_lens.png" style="width: 90%;">
+						<iframe style="position: relative; right:140px; width: 1200px; max-width: 1200px; height: 530px;"src="http://localhost:8080/#/"></iframe>
 						<aside class="notes">
-							"En nu wil ik het zien werken". Snap ik, daarom ga ik nu een demo geven van Excalibur
+							"En nu wil ik het zien werken". Snap ik, daarom ga ik nu een demo geven van Excalibur, en de extra functionaliteit
+							die er nu in zit. 
+
+							We hebben hier de Excalibur UI: je hebt een zoekbalk, je kan zowel met tekst als met een afbeelding zoeken.
+							Laten we beginnen met tekst. De demo dataset die we hier in hebben geladen bevat elf honderd plaatjes die 
+							te maken hebben met iets van luxe goederen, luxe levensstijl, etc.
+
+							Dus stel voor dat ik wil weten of er dure flessen aanwezig zijn in de dataset. Ik kan dan een zoekquery gaan intypen.
+							...demo van expensive bottle...
+							We zien hier zowel flessen parfum als flessen met alcohol staan. Stel dat ik nu alleen de flessen met alcohol wil zien,
+							en niet flessen parfum. Wat je nu kan doen is dat je je resultaten gaat verfijnen, of finetunen zoals we het genoemd hebben.
+							Dit finetunen is vooral handig als je exploratief bezig bent en niet direct weet wat er in de data zit, en gaandeweg nieuwe
+							dingen ontdekt in je zoektocht binnen de dataset. Ook is dit heel handig voor als je hele specifieke subsets van de data
+							wil gaan isoleren en bekijken, waar het model misschien geen kennis over heeft. Een goed voorbeeld hiervan is: stel je 
+							typt in "a photo of an airport", omdat je wil weten of de verdachte foto's heeft uit een vliegveld. Als resultaten krijg
+							je vervolgens 200 foto's van allerlei vliegvelden te zien, maar je spot er ook twee uit Schiphol. Nu ben je extra geinteresseerd:
+							heeft mijn verdachte nog verder foto's uit Schiphol? Het model weet waarschijnlijk niet (goed) wat Schiphol is, omdat het
+							te specifiek is, maar door middel van finetunen kan je nu de Schiphol plaatjes als relevant aanklikken en de andere vliegvelden 
+							als niet relevant, en krijg je hopelijk meer foto's van Schiphol te zien! Hoe het finetuning proces precies werkt ga ik 
+							in deze sessie niet vertellen, maar het maakt gebruik van een ander machine learning model wat live leert van je handelingen.
+
+							Ook kan je natuurlijk met een afbeelding zoeken.
+							...image search demo...
 						</aside>
 					</section>
+					<section>
+						<p style="font-size: 40px; color: whitesmoke;">Excalibur, een overzicht</p>
+						<ul>
+							<li class="text-color-2 fragment fade-up" style="font-size: 30px;">Realiteit: meer data in een zaak dan een rechercheur effectief kan analyseren</li>
+							<li class="text-color-2 fragment fade-up" style="font-size: 30px;">Huidige tools (bijvoorbeeld Cellebrite) hebben limitaties op het gebied van zoeken in foto's</li>
+							<ul>
+								<li class="text-color-2 fragment fade-up" style="font-size: 25px;">Gelimiteerd aan vooraf gedefinieerde categorieën om in te zoeken</li>
+							</ul>
+							<li class="text-color-2 fragment fade-up" style="font-size: 30px;">Zoeken met zowel natuurlijke taal als met afbeeldingen</li>
+							<li class="text-color-2 fragment fade-up" style="font-size: 30px;">Mogelijkheid om de zoekresultaten te verfijnen met interactive learning</li>
+						</ul>
+						<aside class="notes">
+							Nu dat we veel gezien en geprobeerd hebben, even een samenvatting van de afgelopen slide of 25.
+							1) De realiteit is dat er anno 2022 enorm veel data in een zaak zit; vaak veel meer dan een rechercheur effectief kan analyseren
+							2) De huidige tools om met afbeeldingen te werken, zoals Cellebrite, hebben limitaties...
+							3)...bijvoorbeeld dat er alleen op vooraf gedefineerde categorieen gezocht kan worden
+							4) Excalibur maakt het mogelijk om om met zowel natuurlijke taal als met afbeeldingen te zoeken
+							5) Er is binnen Excalibur de mogelijkheid om de zoekresultaten te verfijnen met interactive learning, waar je zelf als gebruiker bepaalt
+							wat wel en niet relevant is.
+						</aside>
+					</section>
+				</section>
+				<section data-background-color="#154c79">
+					<p style="font-size: 40px; color: whitesmoke;">Wat zijn de volgende stappen?</p>
+					<ul>
+						<li class="text-color-2 fragment fade-up" style="font-size: 30px;">Excalibur is een vrij zware applicatie --> niet makkelijk om breed te deployen</li>
+						<li class="text-color-2 fragment fade-up" style="font-size: 30px;">Huidige tools (bijvoorbeeld Cellebrite) hebben limitaties op het gebied van zoeken in foto's</li>
+						<ul>
+							<li class="text-color-2 fragment fade-up" style="font-size: 25px;">Gelimiteerd aan vooraf gedefinieerde categorieën om in te zoeken</li>
+						</ul>
+						<li class="text-color-2 fragment fade-up" style="font-size: 30px;">Zoeken met zowel natuurlijke taal als met afbeeldingen</li>
+						<li class="text-color-2 fragment fade-up" style="font-size: 30px;">Mogelijkheid om de zoekresultaten te verfijnen met interactive learning</li>
+					</ul>
+					<aside class="notes">
+					</aside>
 				</section>
 			</div>
 		</div>

@@ -364,13 +364,15 @@ html * {
  * CUSTOM CSS
  *********************************************/
  .text-color-2 {
-  color: rgb(181, 234, 230);
+  color: #b5eae6;
  }
 
  .text-color-white {
-  color: whitesmoke;
+  color: #f5f5f5;
  }
 
  .reveal li {
   margin: 5px;
- }
+  font-family: Avenir, serif;
+  font-size: 20px;
+}
