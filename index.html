@@ -521,17 +521,35 @@
 						</aside>
 					</section>
 					<section data-background-color="white">
-						<p style="color: black;">CLIP model: plaatjes en tekst bij elkaar</p>
+						<p style="color: black;">CLIP model: afbeeldingen en tekst bij elkaar</p>
 						<img src="assets/clip2.svg" style="width: 70%;">
 						<aside class="notes">
-							Gelukkig is precies zo'n model recent uitgebracht door OpenAI, het AI bedrijf van Elon Musk. Dit model is open
-							source beschikbaar en werkt grof gezegd als volgt: er is enorm veel data van het internet verzameld in de vorm
-							van plaatje-text paren, zoals bijvoorbeeld een Instagram post, die bestaat uit een foto en een tekstje eronder.
-							De aanname hierbij is dat de text onder een foto gerelateerd is aan de foto. Op basis van deze aanname wordt
-							er een neuraal netwerk getraind wat als doel heeft om de plaatjes met de passende tekst zo dicht mogelijk bij elkaar
-							te krijgen in de vector ruimte van het model. Door dit lang genoeg te doen op heel veel data leert het model
-							om een stukje tekst te relateren aan een plaatje wat semantisch gezien vergelijkbare inhoud heeft, zoals bijvoorbeeld
-							onze groene sportauto voorbeeld van net.
+							In praktijk betekent het dat als een gebruiker een tekstuele query doet, zoals "a photo of a dog",
+							en er bestaat een afbeelding van een hond in de collectie van afbeeldingen, dan zal het model
+							deze twee aan elkaar relateren. Dat doet het model aan de hand van de geleerde relaties (wiskundige definitie is dot-product)
+							tussen de afbeelding encoding en de text encoding. Als er meerdere afbeeldingen in de dataset aanwezig zijn 
+							met honden erop dan verwachten we dat die allemaal een vrij hoge score hebben ten opzichte van de textuele query, 
+							en kunnen we ze dus allemaal ophalen. De sortering in de zoekresultaten komt dan overeen met de
+							score tussen de tekstuele zoekvraag en het afbeelding.
+						</aside>
+					</section>
+					<section data-background-color="#d6c9d9">
+						<p style="color: black;">Maar ook afbeeldingen zoeken met afbeeldingen!</p>
+						<img src="assets/reverse_search_lens.png" style="width: 90%;">
+						<aside class="notes">
+							Omdat het model de data in dezelfde representatie ruimte zet, kunnen we ook prima een afbeelding
+							vergelijken met andere afbeeldingen. Met andere woorden, we kunnen een afbeelding gebruiken als zoekvraag om
+							andere afbeeldingen door te zoeken!
+
+							Op deze slide zien we een voorbeeld van Google het doet met hun reverse image search oplossing
+							genaamd Google Lens.
+						</aside>
+					</section>
+					<section data-background-color="#d6c9d9">
+						<p style="color: black;">En nu wil ik het zien werken!</p>
+						<img src="assets/reverse_search_lens.png" style="width: 90%;">
+						<aside class="notes">
+							"En nu wil ik het zien werken". Snap ik, daarom ga ik nu een demo geven van Excalibur
 						</aside>
 					</section>
 				</section>
