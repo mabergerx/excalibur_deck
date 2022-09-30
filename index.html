@@ -64,10 +64,21 @@
 							Zelf aan de gang met Excalibur! 👩‍🔬
 						</li>
 					</ul>
+					<aside class="notes">
+						We beginnen met een introductie, vervolgens bespreken we waarom zoeken in afbeeldingen zo belangrijk is,
+						en maken daarna een transitie naar Excalibur. Hier gaan we een stuk techniek in, waarbij we ingaan op 
+						het zoeken in het algemeen, hoe Excalibur specifiek werkt, en laten we een demo zien.
+						Vervolgens bespreken we de volgende stappen in het project, en is er tijd voor vragen. 
+						Na de presentatie gaan we iets spannends doen: jullie kunnen namelijk zelf aan de gang met Excalibur,
+						met je eigen data! 
+					</aside>
 				</section>
 				<section data-background-color="#093028">
 					<section data-background-color="#093028">
 						<h4 style="position: relative; font-family: Avenir, serif; color: whitesmoke">Wie zijn wij?</h4>
+						<aside class="notes">
+							Laten we beginnen met de introductie van wie we zijn.
+						</aside>
 					</section>
 					<!-- Mark -->
 					<section data-background-color="#093028">
@@ -76,10 +87,10 @@
 							<img style="width: 300px; clip-path: circle(); float: left; position: relative; right: 90px" src="assets/mark.jpg"/>
 							<ul style="bottom: 380px; left: 100px; float: right; position: relative;">
 								<li style="font-size: 25px; font-family: Avenir, serif; margin: 10px;" class="text-color-2">
-									Bachelor Kunstmatige Intelligentie @ Universiteit Utrecht
+									Kunstmatige Intelligentie @ Universiteit Utrecht
 								</li>
 								<li style="font-size: 25px; font-family: Avenir, serif; margin: 10px" class="text-color-2">
-									Master Information Systems @ Universiteit van Amsterdam
+									Information Systems @ Universiteit van Amsterdam
 								</li>
 								<li style="font-size: 25px; font-family: Avenir, serif; margin: 10px" class="text-color-2">
 									Sinds 2018 bij de FIOD als Data Scientist / ML engineer
@@ -95,7 +106,8 @@
 						</div>
 						<aside class="notes">
 							Ik ben Mark, ik werk al sinds 2018 bij de FIOD, als een van de eerste developers van het DGO platform, wat nu uitgegroeid
-							is naar CoDE.
+							is naar CoDE. Daarvoor heb ik AI gestudeerd aan Universiteit Utrecht, en Information Systems aan de Universiteit van Amsterdam.
+							Op professioneel gebied ben ik geinteresseerd in slim zoeken, generatieve AI, en interactieve systemen.
 						</aside>
 					</section>
 					<!-- Ronald -->
@@ -115,13 +127,13 @@
 							style="display: inline" class="fragment highlight-blue" data-fragment-index="1">E</p>xpertise.
 							We ontwikkelen applicaties die het werk van de rechercheur <p style="display: inline" class="fragment highlight-blue" data-fragment-index="2">makkelijker</p> moeten maken. 
 							<br><br>
-							Onze doelstellingen zijn daarbij: gebruik <p style="display: inline" class="fragment highlight-blue" data-fragment-index="3">nieuwe algoritmes en technologieen</p> 
+							Onze doelstellingen zijn daarbij: gebruik <p style="display: inline" class="fragment highlight-blue" data-fragment-index="3">nieuwe algoritmes en technologieën</p> 
 							om <p style="display: inline" class="fragment highlight-blue" data-fragment-index="4">data te reduceren</p>, <p style="display: inline" class="fragment highlight-blue" data-fragment-index="4">te verrijken</p>, en om te zetten naar een <p style="display: inline" class="fragment highlight-blue" data-fragment-index="4">handig formaat</p>.
 						</blockquote>
 						<!-- <p style="font-family: Avenir, serif;" class="text-color-white">Center of Data Expertise</p> -->
 						<aside class="notes">
 							CoDE staat voor Center of Data Expertise. We ontwikkelen applicaties die het werk van de 
-							rechercheur moet vergemakkelijken. Onze doelstellingen zijn daarbij: gebruik nieuwe algoritmes en technologieen
+							rechercheur moet vergemakkelijken. Onze doelstellingen zijn daarbij: gebruik nieuwe algoritmes en technologieën
 							om data te reduceren, te verrijken en om te zetten naar een handig formaat.
 						</aside>
 					</section>
@@ -183,7 +195,7 @@
 						</div>
 						<aside class="notes">
 							Plaatjes, text in de vorm van chat berichten en textuele documenten, en ook audio (en video).
-							VRAAG AAN PUBLIEK: Hoeveel plaatjes staan er normaal gesproken op een inbeslaggenomen apparaat?
+							VRAAG AAN PUBLIEK: Hoeveel foto's worden er per jaar gemaakt met de telefoons over de hele wereld?
 						</aside>
 					</section>
 					<section data-background-color="#093028">
@@ -194,6 +206,7 @@
 						<aside class="notes">
 							Er worden 1.7 triljoen foto's per jaar genomen in de laatste jaren, ofwel 4.7 miljard per dag.
 							Gemiddeld worden er bijna 7 miljard afbeeldingen per dag verstuurd over WhatsApp alleen. 
+							En dan nog een vraag aan jullie: Hoeveel foto's kan een gemiddeld telefoon anno 2022 eigenlijk opslaan?
 						</aside>
 					</section>
 					<section data-background-color="#093028">
@@ -204,7 +217,7 @@
 					<p style="display: inline; font-size: 25px;" class="text-color-2">op hun iPhone staan.<sup>*</sup></p> 
 					<br><br>
 					<div class="fragment fade-in" data-fragment-index="1">
-						<p style="display: inline; font-size: 25px;" class="text-color-2">Echter zijn deze getallen misleidend: de forensische images van de telefoons die wij afnemen hebben veel meer afbeeldingen.
+						<p style="display: inline; font-size: 25px;" class="text-color-2">Echter zijn deze getallen misleidend: de forensische kopieën van de telefoons die wij afnemen hebben veel meer afbeeldingen.
 						Dit komt door allerlei systeem afbeeldingen en icoontjes die op zo'n device kunnen schuilen. Ervaring vertelt dat we het makkelijk over</p> 
 						<p style="display: inline; font-size: 25px;" class="fragment highlight-green text-color-2" data-fragment-index="2">50.000+ afbeeldingen</p>
 						<p style="display: inline; font-size: 25px;"> <p style="display: inline; font-size: 25px;" class="text-color-2"> per device kunnen praten...</p>
@@ -213,7 +226,7 @@
 					<p style="font-size: 15px; float: left; position: relative; top: 70px;"><sup>*</sup> https://photutorial.com/photos-statistics/</p>
 						<aside class="notes">
 							Een gemiddeld telefoon kan anno 2022 rond de 35.500 foto's opslaan. Volgens een onderzoek, hebben mensen in 2022 gemiddeld 2.400 foto's op hun iPhone staan.
-							Echter zijn deze getallen misleidend: de forensische images van de telefoons die wij afnemen hebben veel meer afbeeldingen. 
+							Echter zijn deze getallen misleidend: de forensische kopieën van de telefoons die wij afnemen hebben veel meer afbeeldingen. 
 							Dit komt door allerlei systeem afbeeldingen en icoontjes die op zo'n device kunnen schuilen. 
 							Ervaring vertelt dat we het makkelijk over 50.000+ afbeeldingen per device kunnen praten...
 						</aside>
@@ -224,7 +237,7 @@
 							Wij willen een systeem hebben die <p style="display: inline" class="fragment highlight-red" data-fragment-index="2">100.000</p> te bekijken afbeeldingen reduceert tot
 							<p style="display: inline" class="fragment highlight-green" data-fragment-index="3">100</p> te bekijken afbeeldingen.
 							<br><br>
-							<p style="display: inline" class="fragment highlight-green" data-fragment-index="4">Zo komt een rechercheur of analyst snel toe aan de data die er toe doet.</p>
+							<p style="display: inline" class="fragment highlight-green" data-fragment-index="4">Zo komt een rechercheur of analist snel toe aan de data die er toe doet.</p>
 						</blockquote>
 						<aside class="notes">
 							Data reductie is essentieel. Wij willen een systeem hebben die 100.000 te bekijken afbeeldingen reduceert tot 100 te bekijken afbeeldingen.
@@ -501,7 +514,7 @@
 						<aside class="notes">
 							Nu dat we een manier hebben bekeken om teksten met elkaar te vergelijken op basis van vector representaties, 
 							is de volgende stap natuurlijk: hoe vergelijken we afbeeldingen met tekst (en afbeeldingen met andere afbeeldingen)?
-							Wat we eigenlijk willen is een neuraal netwerk wat zowel afbeeldingen als tekst binnen een vector ruimte kan plaatsen!
+							Wat we eigenlijk willen is een neuraal netwerk wat zowel afbeeldingen als tekst binnen een conceptuele ruimte kan plaatsen!
 						</aside>
 					</section>
 					<section data-background-color="white">
@@ -513,7 +526,7 @@
 							van plaatje-text paren, zoals bijvoorbeeld een Instagram post, die bestaat uit een foto en een tekstje eronder.
 							De aanname hierbij is dat de text onder een foto gerelateerd is aan de foto. Op basis van deze aanname wordt
 							er een neuraal netwerk getraind wat als doel heeft om de plaatjes met de passende tekst zo dicht mogelijk bij elkaar
-							te krijgen in de vector ruimte van het model. Door dit lang genoeg te doen op heel veel data leert het model
+							te krijgen in de conceptuele ruimte van het model. Door dit lang genoeg te doen op heel veel data leert het model
 							om een stukje tekst te relateren aan een plaatje wat semantisch gezien vergelijkbare inhoud heeft, zoals bijvoorbeeld
 							onze groene sportauto voorbeeld van net.
 						</aside>
@@ -535,9 +548,9 @@
 						<p style="color: black;">Maar ook afbeeldingen zoeken met afbeeldingen!</p>
 						<img src="assets/reverse_search_lens.png" style="width: 90%;">
 						<aside class="notes">
-							Omdat het model de data in dezelfde representatie ruimte zet, kunnen we ook prima een afbeelding
+							Omdat het model de data in dezelfde conceptuele ruimte zet, kunnen we ook prima een afbeelding
 							vergelijken met andere afbeeldingen. Met andere woorden, we kunnen een afbeelding gebruiken als zoekvraag om
-							andere afbeeldingen door te zoeken!
+							andere afbeeldingen te doorzoeken!
 
 							Op deze slide zien we een voorbeeld van Google het doet met hun reverse image search oplossing
 							genaamd Google Lens.
@@ -623,7 +636,13 @@
 				<section data-background-color="#154c79" data-auto-animate>
 					<p style="font-size: 70px; color: whitesmoke; display: inline;">Zelf aan de gang met Excalibur</p>
 					<aside class="notes">
-						<!-- TODO -->
+						Nu is het tijd om zelf aan de gang te gaan met Excalibur: we hebben een test dataset voorbereid met behoorlijk wat
+						plaatjes die opsporings relevant zijn, denk aan dure goederen, vlaggen, wapens, voertuigen, precursoren, etc. Daarmee kan 
+						je zometeen op deze computer zelf mee spelen, en Excalibur uitproberen. 
+
+						Maar, we gaan zelfs een stap verder: een paar van jullie hebben aangegeven met eigen data te willen testen: dit hebben 
+						we voor deze sessie voorbereid en dit kan op deze en deze computer gebeuren! Uiteraard zullen we erbij zijn en jullie bijstaan
+						waar nodig.
 					</aside>
 				</section>
 			</div>
